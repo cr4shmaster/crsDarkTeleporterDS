@@ -22,7 +22,7 @@ GLOBAL.crsDarkTeleUseDisabledDuration = GetModConfigData("crsDarkTeleUseDisabled
 
 -- add strings
 STRINGS.NAMES.DARKTELEPORTER = "Dark Teleporter"
-STRINGS.RECIPE_DESC.DARKTELEPORTER = "Teleports you to the nearest Dark Teleporter."
+STRINGS.RECIPE_DESC.DARKTELEPORTER = "Teleports you close by."
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER = "Teleportations is awesome!"
 
 -- add recipe

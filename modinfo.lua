@@ -1,13 +1,19 @@
-name = "Dark Teleporter"
-description = ""
+name = "Dark Teleporter TEST"
+description = "A super cool teleporter."
 author = "cr4shmaster"
-version = "1.0.1"
+version = "1.1.0"
 forumthread = ""
 dont_starve_compatible = true
 reign_of_giants_compatible = true
+shipwrecked_compatible = true
 api_version = 6
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
+
+--[[ 
+Notes:
+ - none
+--]]
 
 local crsDamage = {
  {description = "20", data = 20},
