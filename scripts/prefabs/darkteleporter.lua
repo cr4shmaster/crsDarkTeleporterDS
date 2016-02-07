@@ -1,5 +1,5 @@
 local assets = {
-	Asset("ANIM", "anim/darkteleporter.zip"),
+ Asset("ANIM", "anim/darkteleporter.zip"),
  Asset("ATLAS", "images/inventoryimages/darkteleporter.xml"),
  Asset("IMAGE", "images/inventoryimages/darkteleporter.tex"),
 }
@@ -8,7 +8,7 @@ local function crsOnHammered(inst, worker)
  if inst.components.workable then
   inst:RemoveComponent("workable")
  end
-	inst.SoundEmitter:PlaySound("dontstarve/common/destroy_wood")
+ inst.SoundEmitter:PlaySound("dontstarve/common/destroy_wood")
  inst.AnimState:PlayAnimation("destroyed")
  inst:DoTaskInTime(0.5, function()
   inst:Remove()
@@ -17,21 +17,21 @@ end
 
 local function fn(Sim)
 
-	local inst = CreateEntity()
+ local inst = CreateEntity()
 
-	inst.entity:AddTransform()
+ inst.entity:AddTransform()
  
-	inst.entity:AddAnimState()
+ inst.entity:AddAnimState()
  inst.AnimState:SetBank("darkteleporter")
  inst.AnimState:SetBuild("darkteleporter")
  inst.AnimState:PlayAnimation("idle", true)
  
-	inst.entity:AddSoundEmitter()
+ inst.entity:AddSoundEmitter()
  
  inst:AddTag("crsDarkTeleporter")
  
-	local minimap = inst.entity:AddMiniMapEntity()
-	minimap:SetIcon("darkteleporter.tex")
+ local minimap = inst.entity:AddMiniMapEntity()
+ minimap:SetIcon("darkteleporter.tex")
 
  inst:AddComponent("inspectable")
  
@@ -40,11 +40,11 @@ local function fn(Sim)
  inst:AddComponent("workable")
  inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
  inst.components.workable:SetWorkLeft(6)
-	inst.components.workable:SetOnFinishCallback(crsOnHammered)
+ inst.components.workable:SetOnFinishCallback(crsOnHammered)
  
  inst:AddComponent("playerprox")
-	inst.components.playerprox:SetDist(0.5,1)
-	inst.components.playerprox.onnear = function()
+ inst.components.playerprox:SetDist(0.5,1)
+ inst.components.playerprox.onnear = function()
   local crsFindTeleporter = FindEntity(inst, 15, function(crsTeleporter) 
   return crsTeleporter:HasTag("crsDarkTeleporter")
   end)
@@ -67,10 +67,10 @@ local function fn(Sim)
     end)
    end 
   end
-	end 
+ end 
  
  return inst
 end
 
 return Prefab("common/objects/darkteleporter", fn, assets, prefabs), --assets
-	MakePlacer("common/darkteleporter_placer", "darkteleporter", "darkteleporter", "idle")
+ MakePlacer("common/darkteleporter_placer", "darkteleporter", "darkteleporter", "idle")

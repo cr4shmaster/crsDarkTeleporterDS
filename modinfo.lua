@@ -61,12 +61,12 @@ configuration_options = {
   options = crsDamage,
   default = 30,
  },
-	{
-		name = "crsDarkTeleRecipeDarkMotes",
-		label = "MP DM Recipe",
-		options = crsDarkmotes,
-		default = 150,
-	},
+ {
+  name = "crsDarkTeleRecipeDarkMotes",
+  label = "MP DM Recipe",
+  options = crsDarkmotes,
+  default = 150,
+ },
  {
   name = "crsDarkTeleUseDisabledDuration",
   label = "Disable Used Duration",
