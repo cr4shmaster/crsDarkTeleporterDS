@@ -72,5 +72,5 @@ local function fn(Sim)
  return inst
 end
 
-return Prefab("common/objects/darkteleporter", fn, assets, prefabs), --assets
+return Prefab("common/objects/darkteleporter", fn, assets, prefabs),
  MakePlacer("common/darkteleporter_placer", "darkteleporter", "darkteleporter", "idle")

@@ -1,4 +1,4 @@
-name = "Dark Teleporter TEST"
+name = "Dark Teleporter v1.1"
 description = "A super cool teleporter."
 author = "cr4shmaster"
 version = "1.1.0"
@@ -9,11 +9,6 @@ shipwrecked_compatible = true
 api_version = 6
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
-
---[[ 
-Notes:
- - none
---]]
 
 local crsDamage = {
  {description = "20", data = 20},
