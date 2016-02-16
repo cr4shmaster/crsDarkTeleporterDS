@@ -18,6 +18,13 @@ local crsDamage = {
  {description = "60", data = 60},
  {description = "70", data = 70},
 }
+local crsRange = {
+ {description = "10", data = 10},
+ {description = "15", data = 15},
+ {description = "20", data = 20},
+ {description = "25", data = 25},
+ {description = "30", data = 30},
+}
 local crsDarkmotes = {
  {description = "50", data = 50},
  {description = "60", data = 60},
@@ -48,24 +55,42 @@ local crsDuration = {
  {description = "240", data = 240},
  {description = "300", data = 300},
 }
+local crsRadius = {
+ {description = "0.5", data = .5},
+ {description = "1", data = 1},
+ {description = "1.5", data = 1.5},
+ {description = "2", data = 2},
+}
 
 configuration_options = {
  {
   name = "crsDarkTeleDmgPenaltyOnUse",
-  label = "Max Damage Taken On Use",
+  label = "Max Damage On Use",
   options = crsDamage,
   default = 30,
  },
  {
   name = "crsDarkTeleRecipeDarkMotes",
-  label = "MP DM Recipe",
+  label = "DM Recipe",
   options = crsDarkmotes,
   default = 150,
  },
  {
   name = "crsDarkTeleUseDisabledDuration",
-  label = "Disable Used Duration",
+  label = "On Use Disable For",
   options = crsDuration,
   default = 20,
+ },
+ {
+  name = "crsDarkTeleRange",
+  label = "Teleport Range",
+  options = crsRange,
+  default = 20,
+ },
+ {
+  name = "crsDarkTeleRadius",
+  label = "Activation Radius",
+  options = crsRadius,
+  default = .5,
  },
 }

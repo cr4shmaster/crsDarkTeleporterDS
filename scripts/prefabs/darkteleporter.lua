@@ -43,9 +43,9 @@ local function fn(Sim)
  inst.components.workable:SetOnFinishCallback(crsOnHammered)
  
  inst:AddComponent("playerprox")
- inst.components.playerprox:SetDist(0.5,1)
+ inst.components.playerprox:SetDist(crsDarkTeleRadius,1)
  inst.components.playerprox.onnear = function()
-  local crsFindTeleporter = FindEntity(inst, 15, function(crsTeleporter) 
+  local crsFindTeleporter = FindEntity(inst, crsDarkTeleRange, function(crsTeleporter) 
   return crsTeleporter:HasTag("crsDarkTeleporter")
   end)
   local crsItem = GetPlayer().components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
@@ -72,5 +72,5 @@ local function fn(Sim)
  return inst
 end
 
-return Prefab("common/objects/darkteleporter", fn, assets, prefabs),
+return Prefab("common/objects/darkteleporter", fn, assets),
  MakePlacer("common/darkteleporter_placer", "darkteleporter", "darkteleporter", "idle")

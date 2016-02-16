@@ -19,6 +19,8 @@ TECH = GLOBAL.TECH
 Vector3 = GLOBAL.Vector3
 GLOBAL.crsDarkTeleDmgPenaltyOnUse = GetModConfigData("crsDarkTeleDmgPenaltyOnUse")
 GLOBAL.crsDarkTeleUseDisabledDuration = GetModConfigData("crsDarkTeleUseDisabledDuration")
+GLOBAL.crsDarkTeleRange = GetModConfigData("crsDarkTeleRange")
+GLOBAL.crsDarkTeleRadius = GetModConfigData("crsDarkTeleRadius")
 
 -- add strings
 STRINGS.NAMES.DARKTELEPORTER = "Dark Teleporter"
