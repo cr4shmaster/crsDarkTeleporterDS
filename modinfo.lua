@@ -11,6 +11,8 @@ icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
 local crsDamage = {
+ {description = "0", data = 0},
+ {description = "10", data = 10},
  {description = "20", data = 20},
  {description = "30", data = 30},
  {description = "40", data = 40},
@@ -24,6 +26,9 @@ local crsRange = {
  {description = "20", data = 20},
  {description = "25", data = 25},
  {description = "30", data = 30},
+ {description = "50", data = 50},
+ {description = "75", data = 75},
+ {description = "100", data = 100},
 }
 local crsDarkmotes = {
  {description = "50", data = 50},
@@ -92,5 +97,13 @@ configuration_options = {
   label = "Activation Radius",
   options = crsRadius,
   default = .5,
+ },
+ {
+  name = "crsDarkTeleporterTest",
+  label = "Installed",
+  options = {
+   {description = "Yes", data = 1},
+  },
+  default = 1,
  },
 }

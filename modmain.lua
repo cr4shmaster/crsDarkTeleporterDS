@@ -17,10 +17,8 @@ Recipe = GLOBAL.Recipe
 Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
 Vector3 = GLOBAL.Vector3
-GLOBAL.crsDarkTeleDmgPenaltyOnUse = GetModConfigData("crsDarkTeleDmgPenaltyOnUse")
-GLOBAL.crsDarkTeleUseDisabledDuration = GetModConfigData("crsDarkTeleUseDisabledDuration")
-GLOBAL.crsDarkTeleRange = GetModConfigData("crsDarkTeleRange")
-GLOBAL.crsDarkTeleRadius = GetModConfigData("crsDarkTeleRadius")
+
+local crsSwEnabled = GLOBAL.IsDLCEnabled(GLOBAL.CAPY_DLC)
 
 -- add strings
 STRINGS.NAMES.DARKTELEPORTER = "Dark Teleporter"
@@ -30,7 +28,14 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER = "Teleportations is awesome!
 -- add recipe
 local crsDarkTeleRecipeDarkMotes = Ingredient("darkmote", GetModConfigData("crsDarkTeleRecipeDarkMotes"))
 crsDarkTeleRecipeDarkMotes.atlas = "images/inventoryimages/darkmote.xml"
-local darkteleporter = Recipe("darkteleporter", {
- crsDarkTeleRecipeDarkMotes,
-}, RECIPETABS.ANCIENT, TECH.SCIENCE_ONE, "darkteleporter_placer")
-darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
+if crsSwEnabled then
+ local darkteleporter = Recipe("darkteleporter", {
+  crsDarkTeleRecipeDarkMotes,
+ }, RECIPETABS.ANCIENT, TECH.SCIENCE_ONE, GLOBAL.RECIPE_GAME_TYPE.COMMON, "darkteleporter_placer")
+ darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
+else
+ local darkteleporter = Recipe("darkteleporter", {
+  crsDarkTeleRecipeDarkMotes,
+ }, RECIPETABS.ANCIENT, TECH.SCIENCE_ONE, "darkteleporter_placer")
+ darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
+end
