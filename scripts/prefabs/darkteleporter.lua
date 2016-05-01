@@ -10,6 +10,10 @@ if GetModConfigData("crsDarkTeleporterTest", "workshop-523786293") == 1 then
 else
  crsDarkTeleporterDS = "crsDarkTeleporterDS"
 end
+local crsRadius = GetModConfigData("crsDarkTeleRadius", crsDarkTeleporterDS)
+local crsRange = GetModConfigData("crsDarkTeleRange", crsDarkTeleporterDS)
+local crsDamageOnUse = GetModConfigData("crsDarkTeleDmgPenaltyOnUse", crsDarkTeleporterDS)
+local crsDisabledDuration = GetModConfigData("crsDarkTeleUseDisabledDuration", crsDarkTeleporterDS)
 
 local function crsOnHammered(inst, worker)
  if inst.components.workable then
@@ -50,9 +54,9 @@ local function fn(Sim)
  inst.components.workable:SetOnFinishCallback(crsOnHammered)
  
  inst:AddComponent("playerprox")
- inst.components.playerprox:SetDist(GetModConfigData("crsDarkTeleRadius", crsDarkTeleporterDS), 1)
+ inst.components.playerprox:SetDist(crsRadius, 1)
  inst.components.playerprox.onnear = function()
-  local crsFindTeleporter = FindEntity(inst, GetModConfigData("crsDarkTeleRange", crsDarkTeleporterDS), function(crsTeleporter) 
+  local crsFindTeleporter = FindEntity(inst, crsRange, function(crsTeleporter) 
   return crsTeleporter:HasTag("crsDarkTeleporter")
   end)
   local crsItem = GetPlayer().components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
@@ -63,12 +67,12 @@ local function fn(Sim)
     crsFindTeleporter:AddTag("crsJustUsed")
     local target = crsFindTeleporter:GetPosition()
     local fx = SpawnPrefab("small_puff")
-    local gamble = math.random(GetModConfigData("crsDarkTeleDmgPenaltyOnUse", crsDarkTeleporterDS))
+    local gamble = math.random(crsDamageOnUse)
     inst.SoundEmitter:PlaySound("dontstarve/common/staffteleport")
     GetPlayer().Transform:SetPosition(target.x, target.y, target.z)
     fx.Transform:SetPosition(target.x, target.y, target.z)
     GetPlayer().components.health:DoDelta(-gamble) -- does damage when used
-    inst:DoTaskInTime(GetModConfigData("crsDarkTeleUseDisabledDuration", crsDarkTeleporterDS), function()
+    inst:DoTaskInTime(crsDisabledDuration, function()
      inst:RemoveTag("crsJustUsed")
      crsFindTeleporter:RemoveTag("crsJustUsed")
     end)

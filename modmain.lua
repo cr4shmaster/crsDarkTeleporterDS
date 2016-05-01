@@ -18,7 +18,7 @@ Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
 Vector3 = GLOBAL.Vector3
 
-local crsSwEnabled = GLOBAL.IsDLCEnabled(GLOBAL.CAPY_DLC)
+local crsShipwreckedEnabled = GLOBAL.IsDLCEnabled(GLOBAL.CAPY_DLC)
 
 -- add strings
 STRINGS.NAMES.DARKTELEPORTER = "Dark Teleporter"
@@ -28,7 +28,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.DARKTELEPORTER = "Teleportations is awesome!
 -- add recipe
 local crsDarkTeleRecipeDarkMotes = Ingredient("darkmote", GetModConfigData("crsDarkTeleRecipeDarkMotes"))
 crsDarkTeleRecipeDarkMotes.atlas = "images/inventoryimages/darkmote.xml"
-if crsSwEnabled then
+if crsShipwreckedEnabled then
  local darkteleporter = Recipe("darkteleporter", {
   crsDarkTeleRecipeDarkMotes,
  }, RECIPETABS.ANCIENT, TECH.SCIENCE_ONE, GLOBAL.RECIPE_GAME_TYPE.COMMON, "darkteleporter_placer")
