@@ -7,6 +7,7 @@
 [![Paypal Donation](https://img.shields.io/badge/donate-paypal-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7AJKEDU7BYRRG) 
 [![Steam Trade Offer](https://img.shields.io/badge/donate-steam%20trade%20offer-orange.svg)](https://steamcommunity.com/tradeoffer/new/?partner=42003848&token=tB7Jhg1K)
 
+###  Description:
 A cool teleporter to help you create shortcuts or secret entrances. 
 When stepped on, it teleports your character to the closest other Dark Teleporter. 
 It does not get activated if a Hammer is equipped. 
