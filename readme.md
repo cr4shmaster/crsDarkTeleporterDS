@@ -1,9 +1,9 @@
 # Dark Teleporter for Don't Starve
 
-[![Vanilla](https://img.shields.io/badge/vanilla-yes-brightgreen.svg)](http://steamcommunity.com/workshop/filedetails/?id=442602018) 
-[![Reign of Giants](https://img.shields.io/badge/RoG-yes-brightgreen.svg)](http://steamcommunity.com/workshop/filedetails/?id=442602018) 
-[![Shipwrecked](https://img.shields.io/badge/SW-yes-brightgreen.svg)](http://steamcommunity.com/workshop/filedetails/?id=442602018) 
-[![Steam Workshop](https://img.shields.io/badge/steam-workshop-blue.svg)](http://steamcommunity.com/workshop/filedetails/?id=442602018) 
+[![Vanilla](https://img.shields.io/badge/vanilla-yes-brightgreen.svg)](http://steamcommunity.com/sharedfiles/filedetails/?id=523786293) 
+[![Reign of Giants](https://img.shields.io/badge/RoG-yes-brightgreen.svg)](http://steamcommunity.com/sharedfiles/filedetails/?id=523786293) 
+[![Shipwrecked](https://img.shields.io/badge/SW-yes-brightgreen.svg)](http://steamcommunity.com/sharedfiles/filedetails/?id=523786293) 
+[![Steam Workshop](https://img.shields.io/badge/steam-workshop-blue.svg)](http://steamcommunity.com/sharedfiles/filedetails/?id=523786293) 
 [![Paypal Donation](https://img.shields.io/badge/donate-paypal-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7AJKEDU7BYRRG) 
 [![Steam Trade Offer](https://img.shields.io/badge/donate-steam%20trade%20offer-orange.svg)](https://steamcommunity.com/tradeoffer/new/?partner=42003848&token=tB7Jhg1K)
 
