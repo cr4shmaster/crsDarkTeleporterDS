@@ -8,7 +8,7 @@
 name = "Dark Teleporter v1.1"
 description = "A super cool teleporter."
 author = "cr4shmaster"
-version = "1.1.8"
+version = "1.1.8.1"
 forumthread = ""
 dont_starve_compatible = true
 reign_of_giants_compatible = true
