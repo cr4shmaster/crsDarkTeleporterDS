@@ -1,14 +1,9 @@
--- Use the Dark Teleporter to create shortcuts or secret entrances. When stepped on, 
---  it teleports your character to the closest other Dark Teleporter. It does not 
---  get activated if a Hammer is equipped. It is deactivated for a few seconds after being used.
+-- More information here: https://sites.google.com/view/cr4shmaster/dark-teleporter-ds-dst
 
--- Workshop Page: http://steamcommunity.com/sharedfiles/filedetails/?id=523786293
--- Author: cr4shmaster: http://steamcommunity.com/id/cr4shmaster
-
-name = "Dark Teleporter v1.1"
+name = "Dark Teleporter v1.1.8.2"
 description = "A super cool teleporter."
 author = "cr4shmaster"
-version = "1.1.8.1"
+version = "1.1.8.2"
 forumthread = ""
 dont_starve_compatible = true
 reign_of_giants_compatible = true
@@ -37,22 +32,14 @@ local crsRange = {
     {description = "75", data = 75},
     {description = "100", data = 100},
 }
-local crsDarkmotes = {
-    {description = "50", data = 50},
-    {description = "60", data = 60},
-    {description = "70", data = 70},
-    {description = "80", data = 80},
-    {description = "90", data = 90},
-    {description = "100", data = 100},
-    {description = "125", data = 125},
-    {description = "150", data = 150},
-    {description = "200", data = 200},
-    {description = "250", data = 250},
-    {description = "300", data = 300},
-    {description = "350", data = 350},
-    {description = "400", data = 400},
-    {description = "450", data = 450},
-    {description = "500", data = 500},
+local crsIngredient = {
+    {description = "1", data = 1},
+    {description = "2", data = 2},
+    {description = "3", data = 3},
+    {description = "5", data = 5},
+    {description = "10", data = 10},
+    {description = "15", data = 15},
+    {description = "20", data = 20},
 }
 local crsDuration = {
     {description = "5", data = 5},
@@ -106,16 +93,31 @@ configuration_options = {
         default = 5,
     },
     {
-        name = "cfgDTHeathCost",
+        name = "cfgMarble",
+        label = "Marble",
+        hover = "The amount of Marble needed for crafting the Teleporter.",
+        options = crsIngredient,
+        default = 3,
+    },
+    {
+        name = "cfgGems",
+        label = "Purple Gems",
+        hover = "The number of Purple Gems needed for crafting the Teleporter.",
+        options = crsIngredient,
+        default = 1,
+    },
+    {
+        name = "cfgFuel",
+        label = "Nightmare Fuel",
+        hover = "The amount of Nightmare Fuel needed for crafting the Teleporter.",
+        options = crsIngredient,
+        default = 5,
+    },
+    {
+        name = "cfgDTHealthCost",
         label = "Max Damage On Use",
         options = crsDamage,
         default = 30,
-    },
-    {
-        name = "cfgDTMotes",
-        label = "DM Recipe",
-        options = crsDarkmotes,
-        default = 150,
     },
     {
         name = "cfgDTCooldown",
@@ -134,13 +136,5 @@ configuration_options = {
         label = "Activation Radius",
         options = crsRadius,
         default = .5,
-    },
-    {
-        name = "cfgTestCheck",
-        label = "Installed",
-        options = {
-            {description = "Yes", data = true},
-        },
-        default = true,
     },
 }

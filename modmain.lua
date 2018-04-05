@@ -14,7 +14,6 @@ RECIPETABS = GLOBAL.RECIPETABS
 Recipe = GLOBAL.Recipe
 Ingredient = GLOBAL.Ingredient
 TECH = GLOBAL.TECH
--- Vector3 = GLOBAL.Vector3
 IsDLCEnabled = GLOBAL.IsDLCEnabled
 getConfig = GetModConfigData
 GetPlayer = GLOBAL.GetPlayer
@@ -24,9 +23,6 @@ SpawnPrefab = GLOBAL.SpawnPrefab
 RoG = GLOBAL.REIGN_OF_GIANTS
 SW = GLOBAL.CAPY_DLC
 
--- local noDLC = not IsDLCEnabled(RoG) and not IsDLCEnabled(SW)
--- local anyDLC = IsDLCEnabled(RoG) or IsDLCEnabled(SW)
--- local rogDLC = IsDLCEnabled(RoG)
 local swDLC = IsDLCEnabled(SW)
 
 -- MAP ICONS --
@@ -65,16 +61,18 @@ local crsRecipeTechs = {
 }
 local recipeTech = crsRecipeTechs[getConfig("cfgRecipeTech")]
 
-local DTMotes = Ingredient("darkmote", getConfig("cfgDTMotes"))
-DTMotes.atlas = "images/inventoryimages/darkmote.xml"
 if swDLC then
     local darkteleporter = Recipe("darkteleporter", {
-        DTMotes,
+        Ingredient("marble", getConfig("cfgMarble")),
+        Ingredient("purplegem", getConfig("cfgGems")),
+        Ingredient("nightmarefuel", getConfig("cfgFuel")),
     }, recipeTab, recipeTech, GLOBAL.RECIPE_GAME_TYPE.COMMON, "darkteleporter_placer")
     darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
 else
     local darkteleporter = Recipe("darkteleporter", {
-        DTMotes,
+        Ingredient("marble", getConfig("cfgMarble")),
+        Ingredient("purplegem", getConfig("cfgGems")),
+        Ingredient("nightmarefuel", getConfig("cfgFuel")),
     }, recipeTab, recipeTech, "darkteleporter_placer")
     darkteleporter.atlas = "images/inventoryimages/darkteleporter.xml"
 end
@@ -83,7 +81,7 @@ end
 
 local radius = GetModConfigData("cfgDTRadius")
 local range = GetModConfigData("cfgDTRange")
-local healthCost = GetModConfigData("cfgDTHeathCost")
+local healthCost = GetModConfigData("cfgDTHealthCost")
 local cooldown = GetModConfigData("cfgDTCooldown")
 
 AddPrefabPostInit("darkteleporter", function (inst)
